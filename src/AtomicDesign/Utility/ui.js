@@ -20,10 +20,11 @@ export const fz = (px) => {
 // Common Size Calc for px-to-rem
 export const size = (px) => {
   const fontSize = getComputedStyle(document.querySelector("body")).fontSize;
+  console.log(fontSize);
   // calc for px to rem
   const sizeCalc = px / parseFloat(fontSize);
   const sizeNum = parseFloat(sizeCalc.toFixed(2));
-  return sizeNum + "rem;";
+  return sizeNum + "rem";
 };
 
 // Mixin
