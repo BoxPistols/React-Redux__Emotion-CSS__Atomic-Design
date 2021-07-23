@@ -6,15 +6,24 @@
 // font-size: px to rem Auto Calc
 export const fz = (px) => {
   /* if html element has font-size get root fontSize
-   *     => const fontSize = getComputedStyle( document.documentElement).fontSize
+   * => const fontSize = getComputedStyle( document.documentElement).fontSize
    */
   const fontSize = getComputedStyle(document.querySelector("body")).fontSize;
   console.log(fontSize);
   // calc for px to rem
   const fzCalc = px / parseFloat(fontSize);
   // ブラウザ依存による小数点の表示桁数
-  const fzNum = parseFloat(fzCalc.toFixed(3));
+  const fzNum = parseFloat(fzCalc.toFixed(2));
   return `font-size:` + fzNum + "rem;";
+};
+
+// Common Size Calc for px-to-rem
+export const size = (px) => {
+  const fontSize = getComputedStyle(document.querySelector("body")).fontSize;
+  // calc for px to rem
+  const sizeCalc = px / parseFloat(fontSize);
+  const sizeNum = parseFloat(sizeCalc.toFixed(2));
+  return sizeNum + "rem;";
 };
 
 // Mixin
@@ -43,7 +52,7 @@ export const color = (c) => {
 // ui function
 export const grid = (col_start, col_end, row_start, row_end) => {
   return `
-      // TODO: for IE AutoPrefix
+      // TODO: if IE = for IE AutoPrefix
       grid-column: ${col_start} / ${col_end}; // Horizontal ↑↓
       grid-row: ${row_start} / ${row_end}; // Vertical ←→
   `;
