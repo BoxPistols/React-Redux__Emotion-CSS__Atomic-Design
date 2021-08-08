@@ -4,7 +4,6 @@ import "./styles.css";
 import { App } from "./App";
 
 import styled from "@emotion/styled";
-import { css } from "@emotion/css";
 import * as ui from "./AtomicDesign/Utility/ui";
 
 import { Provider } from "react-redux";
@@ -19,11 +18,12 @@ const store = createStore(
 );
 /* eslint-enable */
 
-
 /* Emotion Styled */
 const DivEmWrap = styled.div`
-    ${ui.tx_center}
-  `;
+  ${ui.tx_center}
+  max-width: 640px;
+  margin: auto;
+`;
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

@@ -6,8 +6,8 @@ export const CalcView = ({ getNum, plus, minus }) => {
     <div>
       <div className="App">
         <Plate fz="10px">
-          <h1>React-Atomic</h1>
-          <h2>Count Num: {getNum}</h2>
+          <p>Count Num</p>
+          <h2>{getNum}</h2>
           <Button text={"PLUS"} onClick={() => plus(5)} />
           <Button text={"MINUS"} onClick={() => minus(25)} />
         </Plate>
