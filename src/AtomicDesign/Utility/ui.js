@@ -36,6 +36,12 @@ export const fx_center = () => {
 `;
 };
 
+export const tx_center = () => {
+  return `
+  text-align: center;
+`;
+};
+
 // bg-color
 export const bgc = (bgColor) => {
   return `

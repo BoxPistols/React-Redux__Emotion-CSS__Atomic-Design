@@ -48,7 +48,7 @@ const TextArea = styled.textarea`
   }
 */
 
-const button = css`
+const c__button = css`
   /* for Text */
   /* font-size: calc(1rem + 1vw); */
   ${ui.fz(12)}
@@ -73,7 +73,7 @@ const button = css`
 export const Button = ({ classes, onClick, text, children, ...props }) => {
   return (
     <button
-      className={button ? button : classes}
+      className={c__button ? c__button : classes}
       onClick={onClick ? onClick : null}
       {...props}
     >

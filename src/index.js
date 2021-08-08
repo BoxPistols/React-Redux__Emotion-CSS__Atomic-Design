@@ -1,6 +1,11 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "./styles.css";
+import { App } from "./App";
+
+import styled from "@emotion/styled";
+import { css } from "@emotion/css";
+import * as ui from "./AtomicDesign/Utility/ui";
 
 import { Provider } from "react-redux";
 import { createStore } from "redux";
@@ -14,11 +19,20 @@ const store = createStore(
 );
 /* eslint-enable */
 
+
+/* Emotion Styled */
+const DivEmWrap = styled.div`
+    ${ui.tx_center}
+  `;
+
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
-      <CalcFunc />
+      <DivEmWrap>
+        <App />
+        <CalcFunc />
+      </DivEmWrap>
     </Provider>
   </StrictMode>,
   rootElement
