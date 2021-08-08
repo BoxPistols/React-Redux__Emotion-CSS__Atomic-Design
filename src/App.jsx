@@ -16,6 +16,15 @@ export const App = () => {
       >
         Click here to change styles.
       </button>
+      <p
+        className={css`
+          color: ${ui.c.gray.__700};
+          ${ui.fz(14)};
+          margin: ${ui.size(4)};
+        `}
+      >
+        emotion className / {styles({ isSelected })}
+      </p>
     </DivEmWrap>
   );
 };
@@ -29,9 +38,9 @@ const em_css__color = css`
 
 /* Emotion Styled */
 const DivEmWrap = styled.div`
-    ${ui.tx_center}    
-    /* ${ui.fx_center} */
-    `;
+  ${ui.tx_center}
+  /* ${ui.fx_center} */
+`;
 
 /* Toggle Style useState */
 const styles = ({ isSelected }) => css`
