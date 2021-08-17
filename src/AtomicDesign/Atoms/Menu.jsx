@@ -30,15 +30,24 @@ export const Menu = () => {
     >
       <div nav={nav}>
         <div className={mod.em__menu_btn} onClick={() => showNav(nav)}>
-          <div className={mod.em__menu_bar} />
-          <div className={mod.em__menu_bar} />
-          <div className={mod.em__menu_bar} />
+          <div className={nav ? mod.em__menu_bar_isOpen : mod.em__menu_bar} />
+          <div className={nav ? mod.em__menu_bar_isOpen : mod.em__menu_bar} />
+          <div className={nav ? mod.em__menu_bar_isOpen : mod.em__menu_bar} />
         </div>
         <nav className={mod.nav}>
           <ul>
-            <li>{nav ? "aaa" : "bbb"} Manu</li>
-            <li>Manu</li>
-            <li>Manu</li>
+            <li>
+              <a href="#aaa">Menu</a>
+            </li>
+            <li>
+              <a href="#bbb">Menu</a>
+            </li>
+            <li>
+              <a href="#ccc">Menu</a>
+            </li>
+            <li>
+              <a href="#ddd">Menu</a>
+            </li>
           </ul>
         </nav>
       </div>

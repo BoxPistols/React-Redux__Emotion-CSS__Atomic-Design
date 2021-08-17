@@ -23,20 +23,36 @@ body {
 
 nav {
   display: none;  
-}
-
-.nav_on nav {
-  display: block;  
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0;  
+  font-size: 1.5rem;
   background-color: #000c;
+  a{
+    color: teal;
+    text-decoration: none;
+  }
+  @media only screen and (max-width: 1024px) {
+    padding-top: 10vh;
+  }
   @media only screen and (min-width: 1025px) {
     position: relative;
     background-color: transparent;
+    position: fixed;
+    top: -8px;
+    right: 24px;
+    left: auto;
+    > ul li {
+      margin: 0 .25rem;
+    }
   }
+
+}
+
+.nav_on nav {
+  display: block;  
 }
 
 // PC

@@ -1,12 +1,12 @@
 .em__menu_btn {
   position: absolute;
   top: 0;
-  right: 1rem;
+  right: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   background: transparent;
   cursor: pointer;
   z-index: 1;
@@ -18,10 +18,22 @@
 .em__menu_bar {
   position: relative;
   background: ghostwhite;
-  width: 2rem;
+  width: 32px;
   height: 2px;
   border-radius: 2px;
   transform-origin: 2px;
   margin: 0 0 6px 0;
 }
 
+.em__menu_bar_isOpen{
+  @extend .em__menu_bar;
+  &:nth-of-type(1){
+    transform: rotate(45deg) translate(3px, -8px);
+  }
+  &:nth-of-type(2){
+    display: none;
+  }
+  &:nth-of-type(3){
+    transform: rotate(-45deg) translate(5px, 5px);
+  }
+}
