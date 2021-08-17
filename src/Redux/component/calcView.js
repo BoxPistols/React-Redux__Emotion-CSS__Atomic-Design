@@ -1,11 +1,12 @@
 import { Button } from "../../AtomicDesign/Atoms/Button";
 import { Plate } from "../../AtomicDesign/Atoms/Plate";
 
-export const CalcView = ({ getNum, plus, minus }) => {
+export const CalcView = ({ getNum, plus, minus, getTitle }) => {
   return (
     <div>
       <div className="App">
         <Plate fz="10px">
+          <h2>{getTitle}</h2>
           <p>Count Num</p>
           <h2>{getNum}</h2>
           <Button text={"PLUS"} onClick={() => plus(5)} />
