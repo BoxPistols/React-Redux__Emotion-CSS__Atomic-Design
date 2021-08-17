@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import "./styles.css";
+import "normalize.css";
+import "./styles.scss";
 import { App } from "./App";
 
 import styled from "@emotion/styled";
@@ -10,6 +11,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./Redux/reducers/index";
 import CalcFunc from "./Redux/container/calcFunc";
+import { Global } from "@emotion/react";
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
@@ -19,6 +21,7 @@ const store = createStore(
 /* eslint-enable */
 
 /* Emotion Styled */
+
 const DivEmWrap = styled.div`
   ${ui.tx_center}
   max-width: 640px;
@@ -30,6 +33,7 @@ ReactDOM.render(
   <StrictMode>
     <Provider store={store}>
       <DivEmWrap>
+        <Global />
         <App />
         <CalcFunc />
       </DivEmWrap>

@@ -1,0 +1,50 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+li{
+  list-style: none;
+  line-height: 1.85;
+}
+
+body {
+  background-color: #212121;
+  color: ghostwhite;
+  position: relative;
+  font-family: "futura", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+nav {
+  display: none;  
+}
+
+.nav_on nav {
+  display: block;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000c;
+  @media only screen and (min-width: 1025px) {
+    position: relative;
+    background-color: transparent;
+  }
+}
+
+// PC
+nav {
+  @media only screen and (min-width: 1025px) {
+    display: block; 
+    ul {
+      display: inline-flex; 
+    }
+  }
+}

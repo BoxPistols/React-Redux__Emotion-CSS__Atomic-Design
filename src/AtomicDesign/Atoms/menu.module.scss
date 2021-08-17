@@ -1,0 +1,27 @@
+.em__menu_btn {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+  @media only screen and (min-width: 1025px) {
+    display: none;
+  }
+}
+
+.em__menu_bar {
+  position: relative;
+  background: ghostwhite;
+  width: 2rem;
+  height: 2px;
+  border-radius: 2px;
+  transform-origin: 2px;
+  margin: 0 0 6px 0;
+}
+

@@ -1,13 +1,15 @@
-import { useState } from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/css";
-import * as ui from "./AtomicDesign/Utility/ui";
+import { useState } from 'react'
+import styled from '@emotion/styled'
+import { css } from '@emotion/css'
+import * as ui from './AtomicDesign/Utility/ui'
+import { Menu } from './AtomicDesign/Atoms/Menu'
 
 export const App = () => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(false)
 
   return (
-    <DivEmWrap bc>
+    <DivEmWrap>
+      <Menu />
       <h1 className={em_css__color}>React Atomic Emotion</h1>
       {/* useState Toggle Style */}
       <button
@@ -26,21 +28,21 @@ export const App = () => {
         emotion className / {styles({ isSelected })}
       </p>
     </DivEmWrap>
-  );
-};
+  )
+}
 
 /* ===== Styling-Design ===== */
 
 /* emotion css */
 const em_css__color = css`
   color: ${ui.c.main};
-`;
+`
 
 /* Emotion Styled */
 const DivEmWrap = styled.div`
   ${ui.tx_center}
   /* ${ui.fx_center} */
-`;
+`
 
 /* Toggle Style useState */
 const styles = ({ isSelected }) => css`
@@ -57,4 +59,4 @@ const styles = ({ isSelected }) => css`
     background-color: #413F42;
     color: hotpink;
   `}
-`;
+`
