@@ -19,6 +19,7 @@
     "react-transition-group": "4.4.2",
     "redux": "4.1.0",
     "redux-devtools-extension": "2.13.9",
+    "redux-thunk": "2.3.0",
     "sass": "1.38.0",
     "sass-loader": "12.1.0"
   },

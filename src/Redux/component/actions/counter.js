@@ -7,7 +7,9 @@ export const minus = (_num) => {
 };
 
 export const asyncMinus = (_num) => {
-  setTimeout(() => {
-    return { type: "MINUS", payload: { num: _num } };
-  }, 1000);
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch({ type: "MINUS", payload: { num: _num } });
+    }, 1500);
+  };
 };

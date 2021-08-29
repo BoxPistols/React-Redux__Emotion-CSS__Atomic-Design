@@ -8,15 +8,18 @@ import styled from "@emotion/styled";
 import * as ui from "./AtomicDesign/Utility/ui";
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import rootReducer from "./Redux/reducers/index";
 import CalcFunc from "./Redux/container/calcFunc";
 import { Global } from "@emotion/react";
 
+const middleWares = [thunk];
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
   rootReducer /* preloadedState, */,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(...middleWares)
 );
 /* eslint-enable */
 
