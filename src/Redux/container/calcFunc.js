@@ -1,6 +1,6 @@
 import { CalcView } from "../component/calcView";
 import { connect } from "react-redux";
-import { plus, minus } from "../component/actions/counter";
+import { plus, minus, asyncMinus } from "../component/actions/counter";
 
 const mapStateToProps = (state) => {
   return {
@@ -16,6 +16,9 @@ const mapDiapatchToProps = (diapatch) => {
     },
     minus: (_num) => {
       diapatch(minus(_num));
+    },
+    asyncMinus: (_num) => {
+      diapatch(asyncMinus(_num));
     }
   };
 };
