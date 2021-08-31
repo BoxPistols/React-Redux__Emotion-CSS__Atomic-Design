@@ -1,6 +1,6 @@
 import { CalcView } from "../component/calcView";
 import { connect } from "react-redux";
-import { plus, minus, asyncMinus } from "../component/actions/counter";
+import { plus, minus, asyncMinus, getJson } from "../component/actions/counter";
 
 const mapStateToProps = (state) => {
   return {
@@ -19,6 +19,9 @@ const mapDiapatchToProps = (diapatch) => {
     },
     asyncMinus: (_num) => {
       diapatch(asyncMinus(_num));
+    },
+    getJson: () => {
+      diapatch(getJson());
     }
   };
 };

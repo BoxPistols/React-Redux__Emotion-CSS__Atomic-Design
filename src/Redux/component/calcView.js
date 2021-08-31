@@ -1,7 +1,14 @@
 import { Button } from "../../AtomicDesign/Atoms/Button";
 import { Plate } from "../../AtomicDesign/Atoms/Plate";
 
-export const CalcView = ({ getNum, plus, minus, getTitle, asyncMinus }) => {
+export const CalcView = ({
+  getNum,
+  plus,
+  minus,
+  getTitle,
+  asyncMinus,
+  getJson
+}) => {
   return (
     <div>
       <div className="App">
@@ -12,6 +19,7 @@ export const CalcView = ({ getNum, plus, minus, getTitle, asyncMinus }) => {
           <Button text={"PLUS"} onClick={() => plus(5)} />
           <Button text={"MINUS"} onClick={() => minus(25)} />
           <Button text={"asyncMinus"} onClick={() => asyncMinus(25)} />
+          <Button text={"getJson"} onClick={() => getJson()} />
         </Plate>
       </div>
     </div>

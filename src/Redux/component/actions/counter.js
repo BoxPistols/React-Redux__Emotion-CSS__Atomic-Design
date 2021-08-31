@@ -16,6 +16,10 @@ export const asyncMinus = (_num) => {
   };
 };
 
+export const changeTitle = (title) => {
+  return { type: "CHANGE_TITLE", payload: { title: title } };
+};
+
 export const getJson = () => {
   return (dispatch) => {
     const url = "https://jsonplaceholder.typicode.com/users";
@@ -24,6 +28,7 @@ export const getJson = () => {
       .get(url)
       .then((res) => {
         console.log(res.data[0].name);
+        dispatch(changeTitle(res.data[0].name));
       })
       .catch((err) => {
         console.log("oh! : " + err);
