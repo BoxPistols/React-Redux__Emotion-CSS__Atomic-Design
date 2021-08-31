@@ -22,8 +22,9 @@ export const changeTitle = (title) => {
 
 export const getJson = () => {
   return (dispatch) => {
-    const url = "https://jsonplaceholder.typicode.com/users";
+    dispatch({ type: "WAIT" });
 
+    const url = "https://jsonplaceholder.typicode.com/users";
     axios
       .get(url)
       .then((res) => {
