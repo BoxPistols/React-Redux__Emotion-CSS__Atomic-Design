@@ -17,8 +17,9 @@ import { Global } from "@emotion/react";
 const middleWares = [thunk];
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
-  rootReducer /* preloadedState, */,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  // rootReducer /* preloadedState, */,
+  rootReducer,
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(...middleWares)
 );
 /* eslint-enable */
