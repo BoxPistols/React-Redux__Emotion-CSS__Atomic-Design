@@ -28,7 +28,7 @@ export const Menu = () => {
       onClick={() => showNav(!nav)}
       timeout={0}
     >
-      <div nav={nav}>
+      <div nav={nav.toString()}>
         <div className={mod.em__menu_btn} onClick={() => showNav(nav)}>
           <div className={nav ? mod.em__menu_bar_isOpen : mod.em__menu_bar} />
           <div className={nav ? mod.em__menu_bar_isOpen : mod.em__menu_bar} />
