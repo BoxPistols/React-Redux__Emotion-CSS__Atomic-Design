@@ -10,9 +10,8 @@
   text-overflow: ellipsis;
 }
 
-
 body {
-  font-family: "noto-sans-cjk-jp", sans-serif;
+  font-family: 'noto-sans-cjk-jp', sans-serif;
   // for Chrome on Mac
   -webkit-font-smoothing: antialiased;
 }
@@ -24,56 +23,90 @@ body {
  * @ss = 12
  * @sm = 14
  * @md = 16
+ * New!
+ * @ml = 18
+ * @lg = 20
+ * @xl = 24
+ * @xxl = 28
+ * @xxxl = 32
  */
 
-$size-list: (xxs: 10, xs: 11, ss: 12, sm: 14, md: 16) !default;
-@function fs($font-size){
+$size-list: (
+  xxs: 10,
+  xs: 11,
+  ss: 12,
+  sm: 14,
+  md: 16,
+  ml: 18,
+  mx: 20,
+  lg: 22,
+  xl: 24,
+  xxl: 28,
+  xxxl: 32
+) !default;
+// FIXME! xxx letter-spacing
+
+@function fs($font-size) {
   @return #{map-get($size-list, $font-size) + px};
 }
-
-// Global Font Size Mixin for html/jsx
-.fs-xxs { // 10px
-  font-size: fs(xxs);
-  letter-spacing: 0.16px;
-}
-
-.fs-xs { // 11px
-  font-size: fs(xs);
-  letter-spacing: 0.18px;
-}
-
-.fs-ss { // 12px
-  font-size: fs(ss);
-  letter-spacing: 0.19px;
-}
-
-.fs-sm { // 14px
-  font-size: fs(sm);
-  letter-spacing: 0.22px;
-}
-
-.fs-md { // 16px
-  font-size: fs(md);
-}
-
 // Global Font Size Mixin for scss
 // Example: @include fs(xs); = 11px
 @mixin fs($size: 16) {
   @if $size==xxs {
     font-size: fs(xxs); // 10px
-  } @else
-  if $size==xs {
+  } @else if $size==xs {
     font-size: fs(xs); // 11px
-  } @else
-  if $size==ss {
+  } @else if $size==ss {
     font-size: fs(ss); // 12px
-  } @else
-  if $size==sm {
+  } @else if $size==sm {
     font-size: fs(sm); // 14px
   } @else {
     font-size: fs(md); // 16px
   }
 }
+
+// $btn-colors: (
+//   'primary': #337ab7,
+//   'secondary': #5cb85c,
+//   'tertiary': #f0ad4e
+// );
+
+// @each $key, $value in $btn-colors {
+//   .btn-#{$key} {
+//     background-color: $value;
+//   }
+// }
+
+@each $key, $value in $size-list {
+  .fs-#{$key} {
+    font-size: $value + px;
+  }
+}
+
+// .fs-xxs {
+//   font-size: fs(xxs);
+// }
+
+// .fs-xs {
+//   font-size: fs(xs);
+// }
+
+// .fs-ss {
+//   font-size: fs(ss);
+// }
+
+// .fs-sm {
+//   font-size: fs(sm);
+//   letter-spacing: 0.22px;
+// }
+
+// .fs-md {
+//   font-size: fs(md);
+// }
+
+// .fs-ml {
+//   font-size: fs(ml);
+// }
 
 // global font-weight: bold = 600
 @mixin fw-bold($fw: 600) {
@@ -95,7 +128,7 @@ $size-list: (xxs: 10, xs: 11, ss: 12, sm: 14, md: 16) !default;
 }
 
 .b-disabled {
-  opacity: .5;
+  opacity: 0.5;
   cursor: unset !important;
 }
 
