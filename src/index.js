@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "normalize.css";
 import "./styles.scss";
-import { App } from "./App";
+import { App2 } from "./App2";
 
 import styled from "@emotion/styled";
 import * as ui from "./AtomicDesign/Utility/ui";
@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./Redux/reducers/index";
-import CalcFunc from "./Redux/container/calcFunc";
+// import CalcFunc from "./Redux/container/calcFunc";
 import { Global } from "@emotion/react";
 
 const middleWares = [thunk];
@@ -38,8 +38,8 @@ ReactDOM.render(
     <Provider store={store}>
       <DivEmWrap>
         <Global />
-        <App />
-        <CalcFunc />
+        <App2 />
+        {/* <CalcFunc /> */}
       </DivEmWrap>
     </Provider>
   </StrictMode>,

@@ -1,0 +1,176 @@
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@mixin cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin dropdown_default {
+  display: grid;
+  grid-template-columns: 25px auto;
+  border-bottom: 1px solid $border__flight-plan__equipment-info;
+  @include fs(xs);
+  align-items: center;
+}
+
+@mixin icon {
+  .icon {
+    cursor: pointer;
+    transform: rotate(-90deg)
+  }
+  .active{
+    transform: rotate(0deg)
+  }
+}
+
+// global hover animation
+@mixin hover-anime_basic($user-select: none) { // Browser default = auto
+  cursor: pointer;
+  transition: .3s !important;
+
+  &:hover {
+    opacity: .8 !important;
+  }
+
+  @if($user-select) {
+    user-select: $user-select;
+  }
+}
+// for HTML Utility on Hover Action
+.hover-anime_basic {
+  @include hover-anime_basic
+}
+.hover-anime_basic__user-select {
+  @include hover-anime_basic(auto)
+}
+
+// layout toggle animation
+@mixin anime_height-opacity($time) {
+  // transition: height 225ms ease-in-out, opacity 225ms ease-in-out;
+  transition:
+    height $time ease-in-out,
+    opacity $time ease-in-out;
+}
+@mixin anime_max-height-opacity($time) {
+  transition:
+    max-height $time ease-in-out,
+    opacity $time ease-in-out;
+}
+
+
+/**
+  * Common UI for Select + Add/Remove List
+  * Example: @include select_add-list(150px, 8%, 4px 8px, 24px)
+*/
+@mixin select_add-list($width, $left:auto, $padding, $last-margin) {
+  @include flex(between, center);
+  width: $width;
+  @if($left){
+    margin-left: $left;
+  }
+  margin-bottom: 8px;
+  @if($padding){
+    padding: $padding;
+  }
+  background-color: $gray-white-950;
+  border: 1px solid $gray-300-600;
+  border-radius: 4px;
+
+  @if($last-margin){
+    &:last-of-type{
+      margin-bottom: $last-margin;
+    }
+  }
+}
+
+@mixin select_add-list__button {
+  @include flex(center, center);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gray-600);
+  cursor: pointer;
+
+  img{
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@mixin select_add-list__button__text {
+  @include text-overflow;
+  max-width: calc(100% - 32px);
+  color: $black-white;
+  @include fs(sm);
+}
+
+@mixin select_add-list__button--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: unset;
+}
+// ↑ End Common UI for Select + Add/Remove List
+
+/**
+  * Truncates text at a specific number of lines
+  * Example: @include line-clamp(2)
+*/
+@mixin line-clamp($line-number:2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-all;
+}
+// ↑ End Truncates text at a specific number of lines
+
+// button desing
+@mixin radius-button($height: 24px) {
+  @include fs(ss);
+  width: auto;
+  padding: 0.8em 1.2em 1em;
+  border: 1px solid var(--white);
+  border-radius: 3em;
+
+  @if($height){
+    height: $height;
+  }
+}
+
+// for Common Form Style Mixin
+@mixin labdel-basic($color: $color_b-text-field_label){
+  @include fs(ss);
+  line-height: 1.75;
+  letter-spacing: 0.18px;
+
+  @if($color){
+    color: $color;
+  }
+}
+
+// for Common Table Style Mixin
+@mixin table-th {
+  @include fs(xs);
+  @include fw-bold;
+  color: $color_table_th;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
