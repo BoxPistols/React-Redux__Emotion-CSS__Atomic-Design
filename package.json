@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "",
   "keywords": [],
+  "license": "MIT",
   "main": "src/index.js",
   "dependencies": {
     "@emotion/css": "11.9.0",
