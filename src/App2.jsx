@@ -18,7 +18,7 @@ export const App2 = () => {
     <DivEmWrap>
       {/* <Menu /> */}
       <div>
-        <h1 className={`${em_css__color} fs-md`}>React Atomic Emotion</h1>
+        <h1 className={`${em_css__color} fs-xxxl`}>React Atomic Emotion</h1>
         {/* useState Toggle Style */}
         <button
           className={styles({ isSelected })}

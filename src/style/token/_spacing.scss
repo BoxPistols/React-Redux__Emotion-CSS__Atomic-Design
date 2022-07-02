@@ -10,36 +10,35 @@ $sides: (top, bottom, left, right);
     .p#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$space}px !important;
     }
-
-  };
+  }
 
   .ma-#{$space} {
     margin: #{$space}px !important;
-  };
+  }
 
   .mx-#{$space} {
     margin-right: #{$space}px !important;
     margin-left: #{$space}px !important;
-  };
+  }
 
   .my-#{$space} {
     margin-top: #{$space}px !important;
     margin-bottom: #{$space}px !important;
-  };
+  }
 
   .pa-#{$space} {
     padding: #{$space}px !important;
-  };
+  }
 
   .px-#{$space} {
     padding-right: #{$space}px !important;
     padding-left: #{$space}px !important;
-  };
+  }
 
   .py-#{$space} {
     padding-top: #{$space}px !important;
     padding-bottom: #{$space}px !important;
-  };
+  }
 }
 
 // ======= common spacing for form-group =======

@@ -1,12 +1,20 @@
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @mixin cut-text {
@@ -32,68 +40,64 @@
 @mixin icon {
   .icon {
     cursor: pointer;
-    transform: rotate(-90deg)
+    transform: rotate(-90deg);
   }
-  .active{
-    transform: rotate(0deg)
+  .active {
+    transform: rotate(0deg);
   }
 }
 
 // global hover animation
-@mixin hover-anime_basic($user-select: none) { // Browser default = auto
+@mixin hover-anime_basic($user-select: none) {
+  // Browser default = auto
   cursor: pointer;
-  transition: .3s !important;
+  transition: 0.3s !important;
 
   &:hover {
-    opacity: .8 !important;
+    opacity: 0.8 !important;
   }
 
-  @if($user-select) {
+  @if ($user-select) {
     user-select: $user-select;
   }
 }
 // for HTML Utility on Hover Action
 .hover-anime_basic {
-  @include hover-anime_basic
+  @include hover-anime_basic;
 }
 .hover-anime_basic__user-select {
-  @include hover-anime_basic(auto)
+  @include hover-anime_basic(auto);
 }
 
 // layout toggle animation
 @mixin anime_height-opacity($time) {
   // transition: height 225ms ease-in-out, opacity 225ms ease-in-out;
-  transition:
-    height $time ease-in-out,
-    opacity $time ease-in-out;
+  transition: height $time ease-in-out, opacity $time ease-in-out;
 }
 @mixin anime_max-height-opacity($time) {
-  transition:
-    max-height $time ease-in-out,
-    opacity $time ease-in-out;
+  transition: max-height $time ease-in-out, opacity $time ease-in-out;
 }
-
 
 /**
   * Common UI for Select + Add/Remove List
   * Example: @include select_add-list(150px, 8%, 4px 8px, 24px)
 */
-@mixin select_add-list($width, $left:auto, $padding, $last-margin) {
+@mixin select_add-list($width, $left: auto, $padding, $last-margin) {
   @include flex(between, center);
   width: $width;
-  @if($left){
+  @if ($left) {
     margin-left: $left;
   }
   margin-bottom: 8px;
-  @if($padding){
+  @if ($padding) {
     padding: $padding;
   }
   background-color: $gray-white-950;
   border: 1px solid $gray-300-600;
   border-radius: 4px;
 
-  @if($last-margin){
-    &:last-of-type{
+  @if ($last-margin) {
+    &:last-of-type {
       margin-bottom: $last-margin;
     }
   }
@@ -107,7 +111,7 @@
   background: var(--gray-600);
   cursor: pointer;
 
-  img{
+  img {
     width: 12px;
     height: 12px;
   }
@@ -131,7 +135,7 @@
   * Truncates text at a specific number of lines
   * Example: @include line-clamp(2)
 */
-@mixin line-clamp($line-number:2) {
+@mixin line-clamp($line-number: 2) {
   display: -webkit-box;
   -webkit-line-clamp: $line-number;
   -webkit-box-orient: vertical;
@@ -150,18 +154,18 @@
   border: 1px solid var(--white);
   border-radius: 3em;
 
-  @if($height){
+  @if ($height) {
     height: $height;
   }
 }
 
 // for Common Form Style Mixin
-@mixin labdel-basic($color: $color_b-text-field_label){
+@mixin labdel-basic($color: $color_b-text-field_label) {
   @include fs(ss);
   line-height: 1.75;
   letter-spacing: 0.18px;
 
-  @if($color){
+  @if ($color) {
     color: $color;
   }
 }

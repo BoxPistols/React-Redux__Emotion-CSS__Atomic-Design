@@ -31,6 +31,13 @@ body {
  * @xxxl = 32
  */
 
+$px-list: (
+  px: 1,
+  px2: 2,
+  px4: 4,
+  px8: 8
+) !default;
+
 $size-list: (
   xxs: 10,
   xs: 11,
@@ -65,48 +72,14 @@ $size-list: (
   }
 }
 
-// $btn-colors: (
-//   'primary': #337ab7,
-//   'secondary': #5cb85c,
-//   'tertiary': #f0ad4e
-// );
-
-// @each $key, $value in $btn-colors {
-//   .btn-#{$key} {
-//     background-color: $value;
-//   }
-// }
-
 @each $key, $value in $size-list {
   .fs-#{$key} {
-    font-size: $value + px;
+    font-size: ($value / 16 * 0.8) + rem;
+    @media only screen and (min-width: 641px) {
+      font-size: $value + px;
+    }
   }
 }
-
-// .fs-xxs {
-//   font-size: fs(xxs);
-// }
-
-// .fs-xs {
-//   font-size: fs(xs);
-// }
-
-// .fs-ss {
-//   font-size: fs(ss);
-// }
-
-// .fs-sm {
-//   font-size: fs(sm);
-//   letter-spacing: 0.22px;
-// }
-
-// .fs-md {
-//   font-size: fs(md);
-// }
-
-// .fs-ml {
-//   font-size: fs(ml);
-// }
 
 // global font-weight: bold = 600
 @mixin fw-bold($fw: 600) {
