@@ -1,0 +1,73 @@
+:root {
+  /* ===== Mono Tone ===== */
+  --azure: #0f92d4;
+  --azure-light: #abd6fc;
+
+  /* === Black/White === */
+  --black: #000;
+  --white: #fff;
+
+  /* === Gray Pattern === */
+  /*
+    - Like Material Design Color
+    - @see: https://material.io/resources/color
+  */
+
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #eeeeee;
+  --gray-300: #e0e0e0;
+  --gray-350: #e5e5e5;
+  --gray-400: #bdbdbd;
+  --gray-500: #9e9e9e;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --gray-850: #333333;
+  --gray-900: #212121;
+  --gray-950: #1b1b1b;
+
+  /* ===== Utility Color ===== */
+  --u-white: #ededf4;
+  --u-gunmetal: #32383e;
+  --u-gunmetal-dark: #182530;
+  --u-valhalla: #262738;
+
+  /* === Action === */
+  --action: #ff9800;
+  --action-light: #ffcc80;
+  --action-dark: #e65100;
+
+  /* === Danger === */
+  --danger: #f44336;
+  --danger-light: #ffcdd2;
+  --danger-dark: #b71c1c;
+
+  /* === Success === */
+  --success: #51cd59;
+  --success-light: #a2eea5;
+  --success-dark: #087510;
+
+  /* === Secondary === */
+  --secondary: #3f51b5;
+
+  /* === Opacity === */
+  --u-gray-active: rgba(160, 160, 160, 0.4);
+  --u-thin-opacity: rgba(255, 255, 255, 0.1);
+
+  --opacity-bg-light: rgba(255, 255, 255, 0.7);
+  --opacity-bg-dark: rgba(0, 0, 0, 0.7);
+  // /* ========== UI Module ========== */
+  // /* ===== Table ===== */
+  // --table-edited: var(--success-dark);
+}
+
+/* ===== Opacity ===== */
+// common translucent
+$opacity-light: rgba(255, 255, 255, 0.8);
+$opacity-dark: rgba(0, 0, 0, 0.8);
+$opacity-light_high: rgba(255, 255, 255, 0.5);
+$opacity-dark_high: rgba(0, 0, 0, 0.5);
+$opacity-light_low: rgba(255, 255, 255, 0.9);
+$opacity-dark_low: rgba(0, 0, 0, 0.9);
+$opacity-dark_very_high: rgba(0, 0, 0, 0.3);

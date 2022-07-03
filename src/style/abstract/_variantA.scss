@@ -1,0 +1,41 @@
+@import 'global_color';
+
+:root {
+  /* ===== Common Brand Color ===== */
+  --primary-color: #434188;
+  --primary-color-sub: #7171b2;
+  --primary-color-info: #b3b3d6;
+  --primary-color-light: #c5cae9;
+  --primary-color-lighter: #e7e7f1;
+  --primary-color-dark: #302f6a;
+  --primary-text: #26263b;
+
+  /* ========== UI Module ========== */
+
+  /* ===== Table ===== */
+  --table-edited: var(--success-dark);
+}
+
+/* ===== Common Brand Color ===== */
+
+$primary: var(--primary-color);
+$primary-sub: var(--primary-color-sub);
+$primary-light-sub: var(--primary-color-light);
+$primary-info: var(--primary-color-info);
+
+$primary-lighter-gray-950: var(--primary-color-lighter);
+
+/* ===== Brand Custom ===== */
+
+// --primary-dark on light / --primary-light on dark
+$primary-dark-light: var(--primary-color-dark);
+// --primary-dark on light / --primary-sub on dark
+$primary-dark-sub: var(--primary-color-dark);
+// --primary-light on light / --primary-sub on dark
+$primary-light-sub: var(--primary-color-light);
+// --primary-color on light / --gray-950 on dark
+$primary-gray-950: var(--primary-color);
+// --primary-color-info on light / --black on dark
+$primary-info-black: var(--primary-color-info);
+// --primary-color-lighter on light / --black on dark
+$primary-lighter-gray-950: var(--primary-color-lighter);
