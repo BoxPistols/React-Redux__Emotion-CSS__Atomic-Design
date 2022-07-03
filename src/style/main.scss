@@ -2,11 +2,11 @@ body {
   background-color: #232232;
 }
 // mixin sass
-@import "mixin/mixins";
+@import 'mixin/mixins';
 // token
-@import "token/typography";
-@import "token/sizeing";
-@import "token/spacing";
+@import 'token/typography';
+@import 'token/sizeing';
+@import 'token/spacing';
 // base
-@import "base/base";
-@import "base/flex-box";
+@import 'base/base';
+@import 'base/flex-box';

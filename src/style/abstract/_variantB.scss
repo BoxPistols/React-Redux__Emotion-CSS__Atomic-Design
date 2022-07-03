@@ -1,0 +1,40 @@
+@import 'global_color';
+
+:root {
+  /* ===== Common Brand Color ===== */
+  --primary-color: #0f92d4;
+  --primary-color-sub: #0e6895;
+  --primary-color-info: #153b61;
+  --primary-color-light: #a6dcf7;
+  --primary-color-dark: #153b61;
+  --primary-text: #d7e4ea;
+
+  /* ========== UI Module ========== */
+
+  /* ===== Table ===== */
+  --table-edited: var(--success-light);
+}
+
+/* ===== Common Brand Color ===== */
+
+$primary: var(--primary-color);
+$primary-sub: var(--primary-color-sub);
+$primary-light-sub: var(--primary-color-sub);
+$primary-info: var(--primary-color-info);
+
+$primary-lighter-gray-950: var(--gray-950);
+
+/* ===== Brand Custom ===== */
+
+// --primary-dark on light / --primary-light on dark
+$primary-dark-light: var(--primary-color-light);
+// --primary-dark on light / --primary-sub on dark
+$primary-dark-sub: var(--primary-color-sub);
+// --primary-light on light / --primary-sub on dark
+$primary-light-sub: var(--primary-color-sub);
+// --primary-color on light / --gray-950 on dark
+$primary-gray-950: var(--gray-950);
+// --primary-color-info on light / --black on dark
+$primary-info-black: var(--black);
+// --primary-color-lighter on light / --gray-950 on dark
+$primary-lighter-gray-950: var(--gray-950);

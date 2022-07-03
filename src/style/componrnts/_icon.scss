@@ -1,31 +1,34 @@
-@import "../mixin/mixins";
+@import '../mixin/mixins';
 
-$icon-size-list: (xxs: 10, xs: 12, ss: 14, sm: 16, md: 20, lg: 24) !default;
-@function icon-size($icon-size){
+$icon-size-list: (
+  xxs: 10,
+  xs: 12,
+  ss: 14,
+  sm: 16,
+  md: 20,
+  lg: 24
+) !default;
+@function icon-size($icon-size) {
   @return #{map-get($icon-size-list, $icon-size) + px};
 }
 
-@mixin icon-size($icon-size: "sm", $height: "auto") {
+@mixin icon-size($icon-size: 'sm', $height: 'auto') {
   @if $icon-size==xxs {
     width: icon-size(xxs); // 10px
     height: icon-size(xxs); // 10px
-    @if($height==auto) {
+    @if ($height==auto) {
       height: auto; // auto
     }
-  } @else
-  if $icon-size==xs {
+  } @else if $icon-size==xs {
     width: icon-size(xs); // 12px
     height: icon-size(xs);
-  } @else
-  if $icon-size==ss {
+  } @else if $icon-size==ss {
     width: icon-size(ss); // 14px
     height: icon-size(ss);
-  } @else
-  if $icon-size==sm {
+  } @else if $icon-size==sm {
     width: icon-size(sm); // 16px
     height: icon-size(sm);
-  } @else
-  if $icon-size==md {
+  } @else if $icon-size==md {
     width: icon-size(md); // 20px
     height: icon-size(md);
   } @else {
@@ -35,22 +38,26 @@ $icon-size-list: (xxs: 10, xs: 12, ss: 14, sm: 16, md: 20, lg: 24) !default;
 }
 
 // Global Icon Size Mixin for html/jsx
-.icon-size-xxs { // 10px
+.icon-size-xxs {
+  // 10px
   @include icon-size(xxs);
 }
-.icon-size-xs { // 12px
+.icon-size-xs {
+  // 12px
   @include icon-size(xs);
 }
-.icon-size-ss { // 14px
+.icon-size-ss {
+  // 14px
   @include icon-size(ss);
 }
-.icon-size-sm { // 16px
+.icon-size-sm {
+  // 16px
   @include icon-size(sm);
 }
-.icon-size-md { // 24px
+.icon-size-md {
+  // 24px
   @include icon-size(md);
 }
-
 
 // TODO: Apply to the whole later
 // global close icon
