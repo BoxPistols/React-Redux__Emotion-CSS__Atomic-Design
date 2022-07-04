@@ -1,0 +1,35 @@
+/**
+ * Size Utilities / It will be used for font-size, spacing, icon-size, and others.
+ * @xxs = 10 / *12px or more is desirable
+ * @xs = 11 / *12px or more is desirable
+ * @ss = 12
+ * @sm = 14
+ * @md = 16
+ */
+
+// $size-list: (
+//   xxs: 10,
+//   xs: 11,
+//   ss: 12,
+//   sm: 14,
+//   md: 16
+// ) !default;
+// @function fs($font-size) {
+//   @return #{map-get($size-list, $font-size) + px};
+// }
+
+$size-list: (
+  xxs: 10,
+  xs: 11,
+  ss: 12,
+  sm: 14,
+  md: 16,
+  ml: 18,
+  mx: 20,
+  lg: 22,
+  xl: 24,
+  xxl: 28,
+  xxxl: 32,
+  balus: 60
+) !default;
+// FIXME! xxx letter-spacing

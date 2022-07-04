@@ -12,7 +12,19 @@ export const App2 = () => {
   // const sizes = [{ xxs: 10, xs: 11, ss: 12, sm: 14, md: 16 }]
 
   // オブジェクトの定義
-  const sizes = ['xxs', 'xs', 'ss', 'sm', 'md', 'ml', 'lg', 'xl', 'xxl', 'xxxl']
+  const sizes = [
+    'xxs',
+    'xs',
+    'ss',
+    'sm',
+    'md',
+    'ml',
+    'lg',
+    'xl',
+    'xxl',
+    'xxxl',
+    'balus'
+  ]
 
   return (
     <DivEmWrap>
