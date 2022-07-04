@@ -1,85 +1,83 @@
-@mixin cut-text {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-@mixin text-overflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-body {
-  font-family: 'noto-sans-cjk-jp', sans-serif;
-  // for Chrome on Mac
-  -webkit-font-smoothing: antialiased;
-}
-
 /**
- * Size Utilities / It will be used for font-size, spacong and others.
- * @xxs = 10 / *12px or more is desirable
- * @xs = 11 / *12px or more is desirable
+ * Size Utilities / It will be used for font-size, icons and others.
+ * @xxs = 10
+ * @xs = 11 // only font-size
  * @ss = 12
  * @sm = 14
  * @md = 16
- * New!
  * @ml = 18
  * @lg = 20
  * @xl = 24
- * @xxl = 28
- * @xxxl = 32
+ * @xxxl = 30
  */
+// これ以上増えそうであれば @2xlなど数字化する
 
+/** 備考
 $px-list: (
   px: 1,
   px2: 2,
-  px4: 4,
-  px8: 8
+  half: 4,
+  base: 8
 ) !default;
+*/
 
-$size-list: (
-  xxs: 10,
-  xs: 11,
-  ss: 12,
-  sm: 14,
-  md: 16,
-  ml: 18,
-  mx: 20,
-  lg: 22,
-  xl: 24,
-  xxl: 28,
-  xxxl: 32
-) !default;
-// FIXME! xxx letter-spacing
-
-@function fs($font-size) {
-  @return #{map-get($size-list, $font-size) + px};
-}
-// Global Font Size Mixin for scss
-// Example: @include fs(xs); = 11px
-@mixin fs($size: 16) {
-  @if $size==xxs {
-    font-size: fs(xxs); // 10px
-  } @else if $size==xs {
-    font-size: fs(xs); // 11px
-  } @else if $size==ss {
-    font-size: fs(ss); // 12px
-  } @else if $size==sm {
-    font-size: fs(sm); // 14px
-  } @else {
-    font-size: fs(md); // 16px
-  }
+// map-get from sizes.scss
+@function fs($size) {
+  @return #{map-get($size-list, $size) + px};
 }
 
-@each $key, $value in $size-list {
-  .fs-#{$key} {
-    font-size: ($value / 16 * 0.8) + rem;
-    @media only screen and (min-width: 641px) {
-      font-size: $value + px;
+// @mixin example fs($size: 16, 16px) {
+@mixin fs($size, $height: auto) {
+  @each $key, $value in $size-list {
+    @if $size==$key {
+      font-size: fs($key);
+      // @if ($height==auto) {
+      //   height: auto;
+      // } @else {
+      @if ($height==$key) {
+        height: ($value) + px;
+      } @else if($height==auto) {
+        height: auto;
+      } @else if($height) {
+        height: ($height) + px;
+      } @else {
+        height: auto;
+      }
     }
   }
 }
+
+// Add Class for HTML Utility
+@each $key, $value in $size-list {
+  .fs-#{$key} {
+    @include fs($key, $value);
+  }
+}
+
+// FIXME!: TODO: Width Utility
+
+// Example
+.fs-xl {
+  @include fs(xxl);
+}
+.fs-xxl {
+  @include fs(xxl, auto);
+}
+.fs-xxxl {
+  @include fs(xxxl, xxxl);
+}
+.fs-balus {
+  @include fs(balus, 115);
+}
+
+// @each $key, $value in $size-list {
+//   .fs-#{$key} {
+//     font-size: ($value / 16 * 0.75) + rem;
+//     @media only screen and (min-width: 641px) {
+//       font-size: $value + px;
+//     }
+//   }
+// }
 
 // global font-weight: bold = 600
 @mixin fw-bold($fw: 600) {

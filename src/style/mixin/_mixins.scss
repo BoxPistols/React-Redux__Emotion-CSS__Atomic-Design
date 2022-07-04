@@ -1,3 +1,16 @@
+// for typography
+@mixin cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% {

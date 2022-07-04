@@ -17,6 +17,14 @@
   - xxl: 28, // Large general-purpose size
   - xxxl: 32 // Large general-purpose size
 
+or 明示的な名前
+
+- size-20: 20,
+- size-22: 22,
+- size-24: 24,
+- size-28: 28,
+- size-32: 32
+
 For larger sizes, consider display-size-sm: 40 etc.
 それより大きなサイズは、display-size-sm: 40 などを検討しています
 
@@ -26,3 +34,5 @@ For larger sizes, consider display-size-sm: 40 etc.
 　- webpackのenvはdark or lightの分岐にしたい
 　- その他ブランカラーの分岐がさらに発生すれば、primaryカラーのみ変更が渡されるようにする
 　　- さらにその際もdarkかlightかどちらに属するカラースキームなのか、明示的にする
+
+## Log
