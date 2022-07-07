@@ -27,22 +27,31 @@ $px-list: (
 }
 
 // @mixin example fs($size: 16, 16px) {
+// @mixin fs($size, $height: auto) {
+//   @each $key, $value in $size-list {
+//     @if $size==$key {
+//       font-size: fs($key);
+//       // @if ($height==auto) {
+//       //   height: auto;
+//       // } @else {
+//       @if ($height==$key) {
+//         height: ($value) + px;
+//       } @else if($height==auto) {
+//         height: auto;
+//       } @else if($height) {
+//         height: ($height) + px;
+//       } @else {
+//         height: auto;
+//       }
+//     }
+//   }
+// }
+
+// TODO: px to rem
 @mixin fs($size, $height: auto) {
   @each $key, $value in $size-list {
     @if $size==$key {
       font-size: fs($key);
-      // @if ($height==auto) {
-      //   height: auto;
-      // } @else {
-      @if ($height==$key) {
-        height: ($value) + px;
-      } @else if($height==auto) {
-        height: auto;
-      } @else if($height) {
-        height: ($height) + px;
-      } @else {
-        height: auto;
-      }
     }
   }
 }
@@ -57,18 +66,18 @@ $px-list: (
 // FIXME!: TODO: Width Utility
 
 // Example
-.fs-xl {
-  @include fs(xxl);
-}
-.fs-xxl {
-  @include fs(xxl, auto);
-}
-.fs-xxxl {
-  @include fs(xxxl, xxxl);
-}
-.fs-balus {
-  @include fs(balus, 115);
-}
+// .fs-xl {
+//   @include fs(xxl);
+// }
+// .fs-xxl {
+//   @include fs(xxl, auto);
+// }
+// .fs-xxxl {
+//   @include fs(xxxl, xxxl);
+// }
+// .fs-balus {
+//   @include fs(balus, 115);
+// }
 
 // @each $key, $value in $size-list {
 //   .fs-#{$key} {

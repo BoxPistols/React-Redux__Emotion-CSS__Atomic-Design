@@ -33,3 +33,42 @@ $size-list: (
   balus: 60
 ) !default;
 // FIXME! xxx letter-spacing
+
+/**
+ * Common Size
+ */
+
+// map-get from sizes.scss
+@function size($size) {
+  @return #{map-get($size-list, $size) + px};
+}
+
+// @mixin example size($size: 16, 16px) {
+@mixin size($size, $height: auto) {
+  @each $key, $value in $size-list {
+    @if $size==$key {
+      width: size($key);
+      // @if ($height==auto) {
+      //   height: auto;
+      // } @else {
+      @if ($height==$key) {
+        height: ($value) + px;
+      } @else if($height==auto) {
+        height: auto;
+      } @else if($height) {
+        height: ($height) + px;
+      } @else {
+        height: auto;
+      }
+    }
+  }
+}
+
+// Add Class for HTML Utility
+@each $key, $value in $size-list {
+  // .size-#{$key} {
+  .size-#{$key}.MuiSvgIcon-root {
+    // mui icon特化
+    @include size($key, $value);
+  }
+}
