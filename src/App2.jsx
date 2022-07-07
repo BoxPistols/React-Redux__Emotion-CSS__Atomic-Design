@@ -4,6 +4,7 @@ import { css } from '@emotion/css'
 import * as ui from './AtomicDesign/Utility/ui'
 // import { Menu } from "./AtomicDesign/Atoms/Menu";
 import './style/main.scss'
+import SvgIconsColor from './Components/Icons'
 
 export const App2 = () => {
   const [isSelected, setIsSelected] = useState(false)
@@ -50,15 +51,33 @@ export const App2 = () => {
           </ul>
         </div>
 
-        {/* <p
-          className={css`
-            color: ${ui.c.gray.__700};
-            ${ui.fz(14)};
-            margin: ${ui.size(4)};
-          `}
-        >
-          emotion className / {styles({ isSelected })}
-        </p> */}
+        <hr />
+
+        <div>
+          <ul>
+            {' '}
+            {sizes.map((size, index) => (
+              <li key={index}>
+                <SvgIconsColor className={`fs-${size}`} />
+              </li>
+            ))}
+          </ul>
+          {/* <SvgIconsColor className={`size-balus`} /> */}
+        </div>
+
+        <hr />
+
+        <div>
+          <p
+            className={css`
+              color: ${ui.c.gray.__700};
+              ${ui.fz(14)};
+              margin: ${ui.size(4)};
+            `}
+          >
+            emotion className / {styles({ isSelected })}
+          </p>
+        </div>
       </div>
     </DivEmWrap>
   )
