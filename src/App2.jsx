@@ -37,7 +37,7 @@ export const App2 = () => {
           className={styles({ isSelected })}
           onClick={() => setIsSelected(!isSelected)}
         >
-          Click here to change styles.
+          Click here to change styles??
         </button>
 
         <div>
