@@ -58,7 +58,7 @@ export const App2 = () => {
             {' '}
             {sizes.map((size, index) => (
               <li key={index}>
-                <SvgIconsColor className={`fs-${size}`} />
+                <SvgIconsColor className={`size-${size}`} />
               </li>
             ))}
           </ul>
