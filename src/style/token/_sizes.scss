@@ -67,6 +67,9 @@ $size-list: (
 // Add Class for HTML Utility
 @each $key, $value in $size-list {
   // .size-#{$key} {
+  .size-#{$key} {    
+    @include size($key, $value);
+  }
   .size-#{$key}.MuiSvgIcon-root {
     // mui icon特化
     @include size($key, $value);
