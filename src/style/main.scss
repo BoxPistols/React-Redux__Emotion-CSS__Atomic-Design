@@ -1,8 +1,8 @@
 // mixin sass
-@import 'mixin/mixins';
-@import 'token/sizes';
+@import 'mixin';
 
 // token
+@import 'token/sizes';
 @import 'token/typography';
 @import 'token/spacing';
 
